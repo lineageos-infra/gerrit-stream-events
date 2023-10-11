@@ -1,0 +1,12 @@
+# this file will always be in the format:
+# event:
+#  - file.FunctionToCall
+#  - file.FunctionToCall2
+# 
+- name: www-buildkite
+  type: ref-updated
+  filter:
+    refUpdate.project: LineageOS/android_packages_apps_DeskClock
+  callables:
+    test.TestFunc:
+      name: www-preview
