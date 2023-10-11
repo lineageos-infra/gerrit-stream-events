@@ -14,3 +14,10 @@ config includes an event type, filter, and a list of callable python functions t
     test.TestFunc:
       name: www-preview
 ```
+
+Example test.py:
+
+```python
+def TestFunc(event, name) -> None:
+    print(event, name)
+```

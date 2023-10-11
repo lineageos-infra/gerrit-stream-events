@@ -4,9 +4,9 @@
 #  - file.FunctionToCall2
 # 
 - name: www-buildkite
-  type: ref-updated
+  type: patchset-created
   filter:
-    refUpdate.project: LineageOS/android_packages_apps_DeskClock
+    change.project: LineageOS/www
   callables:
-    test.TestFunc:
+    buildkite.StartPipeline:
       name: www-preview
