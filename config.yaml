@@ -2,7 +2,7 @@
 # event:
 #  - file.FunctionToCall
 #  - file.FunctionToCall2
-# 
+#
 - name: www-buildkite
   type: patchset-created
   filter:

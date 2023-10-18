@@ -1,6 +1,7 @@
 import fileinput
 import importlib
 import operator
+import traceback
 
 from functools import reduce
 from typing import Any
@@ -46,7 +47,11 @@ def parse(configs: dict[str, list[Config]], event: dict) -> None:
                 module = ".".join(k.split(".")[:-1])
                 function = k.split(".")[-1]
                 mod = importlib.import_module(module)
-                getattr(mod, function)(event, **v)
+                try:
+                    getattr(mod, function)(event, **v)
+                except Exception as e:
+                    print(traceback.format_exc())
+
 
 if __name__ == "__main__":    
     configs: dict[str, list[Config]] = {}
